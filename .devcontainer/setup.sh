@@ -1,12 +1,13 @@
-pacman -Syyuu \
+apt update
+apt install -y \
   curl \
   git \
-  gnupg \
+  gnupg2 \
   jq \
   sudo \
   zsh \
   vim \
-  base-devel \
+  build-essential \
   openssl
 curl https://sh.rustup.rs -sSf | sh -s -- -y 
 source "$HOME/.cargo/env"
@@ -20,9 +21,6 @@ cargo install cargo-expand
 cargo install cargo-edit
 
 ## setup and install oh-my-zsh
-USERNAME=$(whoami)
-USER_UID=$(id -u)
-USER_GID=$(id -g)
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
 cp -R /root/.oh-my-zsh /home/$USERNAME
 cp /root/.zshrc /home/$USERNAME
