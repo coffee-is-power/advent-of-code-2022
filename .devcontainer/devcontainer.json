@@ -1,0 +1,30 @@
+{
+    "name": "Advent Of Code 2022",
+    "extensions": [
+		"cschleiden.vscode-github-actions",
+		"ms-vsliveshare.vsliveshare",
+		"serayuzgur.crates",
+		"vadimcn.vscode-lldb",
+		"rust-lang.rust-analyzer",
+		"tamasfe.even-better-toml"
+	],
+    "dockerFile": "Dockerfile",
+    "settings": {
+        "terminal.integrated.profiles.linux": {
+            "zsh": {
+                "path": "/usr/bin/zsh"
+            },
+            "bash": {
+                "path": "/usr/bin/bash"
+            }
+        },
+        "terminal.integrated.defaultProfile.linux": "zsh",
+        "editor.formatOnSave": true,
+
+        "files.exclude": {
+            "**/CODE_OF_CONDUCT.md": true,
+            "**/LICENSE": true,
+            "**/Cargo.lock": true
+        }
+    }
+}
