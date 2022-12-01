@@ -1,7 +1,7 @@
 pacman -Syyuu \
   curl \
   git \
-  gnupg2 \
+  gnupg \
   jq \
   sudo \
   zsh \
@@ -9,6 +9,7 @@ pacman -Syyuu \
   base-devel \
   openssl
 curl https://sh.rustup.rs -sSf | sh -s -- -y 
+source "$HOME/.cargo/env"
 rustup install nightly
 rustup component add rustfmt
 rustup component add rustfmt --toolchain nightly
@@ -19,6 +20,9 @@ cargo install cargo-expand
 cargo install cargo-edit
 
 ## setup and install oh-my-zsh
+USERNAME=$(whoami)
+USER_UID=$(id -u)
+USER_GID=$(id -g)
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
 cp -R /root/.oh-my-zsh /home/$USERNAME
 cp /root/.zshrc /home/$USERNAME
